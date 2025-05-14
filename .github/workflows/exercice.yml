@@ -3,7 +3,7 @@ name: Build a Java App
 on:
   push:
     branches:
-      - main
+      - prout
 
 jobs:
   build:
