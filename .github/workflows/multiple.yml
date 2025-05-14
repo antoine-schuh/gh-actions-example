@@ -1,4 +1,4 @@
-name: Single vs Multiple Trigger
+name: Single vs Multiple Trigger 
 
 on:
   push:
