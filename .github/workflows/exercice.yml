@@ -6,8 +6,17 @@ on:
       - main
 
 jobs:
-  comment:
+  checkout:
+    name: Checkout source code
     runs-on: ubuntu-latest
     steps:
-      - name: Comment on a specific issue
-	  
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.14.1
+        with:
+          java-version: 21
+
+      - name: Build
+        run: mvn clean install
