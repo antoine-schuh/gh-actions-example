@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  checkout:
-    name: Checkout source code
+  build:
+    name: Checkout build and deploy app
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +19,6 @@ jobs:
           java-version: 21
           distribution: temurin
           
-
       - name: Build
         working-directory: java-app
         run: mvn clean install
