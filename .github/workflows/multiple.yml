@@ -1,6 +1,11 @@
 name: Single vs Multiple Trigger 
 
 on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version à déployer"
+        required: false
   push:
     branches:
       - main
