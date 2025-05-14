@@ -1,4 +1,4 @@
-name: Single vs Multiple Trigger 
+name: Single vs Multiple Trigger
 
 on:
   workflow_dispatch:
@@ -9,20 +9,9 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-  label:
-    types:
-      - created
-  issues:
-    types:
-      - opened
-      - labeled
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Hello Build! Triggered by ${{ github.event_name }} event."
+      - run: 'echo "Version: ${{ github.event.inputs.version }}"'
